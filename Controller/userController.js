@@ -28,3 +28,29 @@ exports.register = async(req,res)=>{
     }
 }
 
+
+exports.login = async(req,res)=>{
+
+    console.log('Inside Login Controller Function');
+
+    const {email,password} = req.body
+
+    try{
+
+       const registeredUser = await users.findOne({email,password})
+
+       if(registeredUser){
+
+
+        res.status(200).json("Login Success")
+   
+       }else{
+         res.status(406).json("Invalid Email or Password")
+
+       }
+
+    } catch(err){
+        res.status(401).json(`Login API  Failed Error : ${err}` )
+    }
+
+}
