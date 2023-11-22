@@ -38,7 +38,6 @@ const userSchema = new mongoose.Schema({
        
     }
 
-
 })
 
 const users = mongoose.model("users",userSchema)
