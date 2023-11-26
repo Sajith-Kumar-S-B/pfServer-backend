@@ -94,7 +94,7 @@ exports.editProjectController = async(req,res)=>{
             title,languages,overview,gitHub,website,projectImage:uploadProjectImage,userId    
         },{new:true})
         await updateProject.save()
-
+       res.status(200).json(updateProject)
     }catch(err){
         res.status(401).json(err)
     }
