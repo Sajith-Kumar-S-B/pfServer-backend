@@ -47,6 +47,12 @@ router.put('/projects/edit/:id',jwtMiddleware,multerConfig.single("projectImage"
 
 
 
+
+// delete projects Api
+
+router.delete('/projects/remove/:id',jwtMiddleware,projectController.deleteProjectController)
+
+
 // export router
 
 module.exports = router
